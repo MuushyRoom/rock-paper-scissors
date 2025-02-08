@@ -1,14 +1,34 @@
 let playerHand = 0;
 
-let buttonText = document.getElementById("gameButton");
+
+
+function setPlayerRock() {
+    
+    playerHand = 1;
+    console.log("Player selected Rock");
+   
+}
+function setPlayerPaper() {
+    
+    playerHand = 2;
+    console.log("Player selected Paper");
+ 
+}
+function setPlayerScissors() {
+    
+    playerHand = 3;
+    console.log("Player selected Scissors");
+    
+}
+
+
 function gameStart(){
     
 
     document.getElementById("gameButton").addEventListener("click", function(gameStart) {
-
-        if(buttonText == "Start"){
-  
-            let computerChoice = Math.floor(Math.random() * 3) + 1;
+        let computerChoice = Math.floor(Math.random() * 3) + 1;
+        let btn = document.getElementById("gameButton");
+        if (btn.value=="Start"){
             let resultText = document.getElementById("textHeader");
            
             if(playerHand == 0){
@@ -18,26 +38,17 @@ function gameStart(){
              const myImg = document.getElementById("computerImg");
              const myButton = document.getElementById("gameButton");
          
-                 myImg.src = "imgs/1.png";
-            
-              
-         
+                 myImg.src = "imgs/1.png";    
          }else if(computerChoice == 2){
              const myImg = document.getElementById("computerImg");
              const myButton = document.getElementById("gameButton");
             
                  myImg.src = "imgs/2.png";
-              
-              
-         
          }else if(computerChoice == 3){
              const myImg = document.getElementById("computerImg");
-             const myButton = document.getElementById("gameButton");
-            
+             const myButton = document.getElementById("gameButton");    
                  myImg.src = "imgs/3.png";
-             
-             
-         
+     
          }
          
          if(playerHand == computerChoice){
@@ -62,13 +73,22 @@ function gameStart(){
                 
                 resultText.textContent = "You Win!"; 
             }
-            document.getElementById("gameButton").value="New Game";
-            playerChoice = 0;
-        }else if(buttonText == "New Game"){
             
-        }
-      
+          
+            document.getElementById("rockButton").style.backgroundColor = "rgb(248, 158, 117)";
+            document.getElementById("paperButton").style.backgroundColor = "rgb(248, 158, 117)";
+            document.getElementById("scissorsButton").style.backgroundColor = "rgb(248, 158, 117)";
+            btn.innerHTML = "New Game";
+            btn.value = "New Game";
+            playerHand = 0;
+            
 
+            
+        }else if (btn.value == "New Game"){
+          
+                      
+            window.location = "game.html"; 
+        }
      });
 
 
@@ -80,24 +100,3 @@ function gameStart(){
 
     
 }
-
-function setPlayerRock() {
-    
-    playerHand = 1;
-    console.log("Player selected Rock");
-    
-}
-function setPlayerPaper() {
-    
-    playerHand = 2;
-    console.log("Player selected Paper");
-    
-}
-function setPlayerScissors() {
-    
-    playerHand = 3;
-    console.log("Player selected Scissors");
-    
-}
-
-

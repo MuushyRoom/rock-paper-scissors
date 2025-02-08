@@ -15,7 +15,7 @@
       <div class="gameDiv">
         <div class="buttonDiv">
             <h3>CHOOSE A HAND</h3>
-          <button id="rockButton" class="button1"  onClick="setPlayerRock()">
+          <button id="rockButton" class="button1"  onClick="setPlayerRock();">
             ROCK
           </button>
           
@@ -23,7 +23,7 @@
           <button
             id="paperButton"
             class="button2"
-            onClick="setPlayerPaper()"
+            onClick="setPlayerPaper();"
           >
             PAPER
           </button>
@@ -33,7 +33,7 @@
           <button
             id="scissorsButton"
             class="button3"
-            onClick="setPlayerScissors()"
+            onClick="setPlayerScissors();"
           >
             SCISSORS
           </button>
@@ -67,7 +67,7 @@
     <script>
  
         document.getElementById("rockButton").addEventListener("click", function(selectedRock) {      
-            
+          setPlayerRock();
             const myImg = document.getElementById("playerImg");
             const myButton = document.getElementById("rockButton");
         
@@ -91,8 +91,9 @@
                         });
 
 
-                        
+                                   
     document.getElementById("paperButton").addEventListener("click", function(selectedPaper) {
+      setPlayerPaper();  
     const myImg = document.getElementById("playerImg");
     const myButton = document.getElementById("paperButton");
 
@@ -107,13 +108,13 @@
     document.getElementById("paperButton").style.backgroundColor = "rgb(29, 240, 9)";
     document.getElementById("scissorsButton").style.backgroundColor = "rgb(248, 158, 117)";
   
-    playerChoice = 2;
+   
      });
 
 
 
                         document.getElementById("scissorsButton").addEventListener("click", function(selectedScissors) {
-                        
+                          setPlayerScissors();  
      const myImg = document.getElementById("playerImg");
     const myButton = document.getElementById("scissorsButton");
 
@@ -127,8 +128,7 @@
     document.getElementById("rockButton").style.backgroundColor = "rgb(248, 158, 117)";
     document.getElementById("paperButton").style.backgroundColor = "rgb(248, 158, 117)";
   
-    playerChoice = 3;
-    
+  
                     
                                     });
                 
