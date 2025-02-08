@@ -1,47 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="gameStyles.css">
-    <title>Rock Paper Scissors</title>
-</head>
-<body>
-    <div class="mainDiv">
-        <div class="headerDiv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="gameStyles.css" />
 
-            <h1>Rock Paper Scissors</h1>
-        </div>
-        <div class="gameDiv">
-                <div class="buttonDiv">
-                        <button class="button1">ROCK</button>
-                        <button class="button2">PAPER</button>
-                        <button class="button3">SCISSORS</button>
-                        
-                </div>
-                <div class="resultDiv">
-                    <div class="handDiv">
-                     
-                            <div id="playerHand">
-                        <div id ="playerHandContainer">
-                        <img  id="playerImg" src="imgs/1.png" alt="">
-                        </div>
-                        <h2>Your Hand</h2>
-                    </div>
-                        
-                    <div id="computerHand">
-                        <div id="computerHandContainer">
-                            <img id="computerImg" src="imgs/hidden.png" alt="">
-                        </div>
-                        <h2>Computer Hand</h2>
-                    </div>
-                    </div>
-                    <div class="mainButtonDiv">
-                        <button class="buttonStart">Start</button>
-                    </div>
-                </div>    
-        </div>
-    </div>   
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <div class="mainDiv">
+      <div class="headerDiv">
+        <h1 id="textHeader">Rock Paper Scissors</h1>
+      </div>
+      <div class="gameDiv">
+        <div class="buttonDiv">
+            <h3>CHOOSE A HAND</h3>
+          <button
+            id="rockButton"
+            class="button1"
+           onclick="selectedRock()"
+          >
+            ROCK
+          </button>
     
-</body>
+
+          <button
+            id="paperButton"
+            class="button2"
+            onclick="selectedPaper()"
+          >
+            PAPER
+          </button>
+        
+          
+
+          <button
+            id="scissorsButton"
+            class="button3"
+            onclick="selectedScissors()"
+          >
+            SCISSORS
+          </button>
+         
+        </div>
+        <div class="resultDiv">
+          <div class="handDiv">
+            <div id="playerHand">
+              <div id="playerHandContainer">
+                <img id="playerImg" src="imgs/hidden.png" alt="" />
+              </div>
+              <h2>Your Hand</h2>
+            </div>
+
+            <div id="computerHand">
+              <div id="computerHandContainer">
+                <img id="computerImg" src="imgs/hidden.png" alt="" />
+              </div>
+              <h2>Computer Hand</h2>
+            </div>
+          </div>
+          <div class="mainButtonDiv">
+            <h2> Start <a href="game.html">new</a> game!</h2>
+            <button onclick="gameStart();checkWinner();" id="gameButton" class="buttonStart">
+              Start
+            </button>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+
+
+        document.getElementById("rockButton").addEventListener("click", function(selectedRock) {
+                        
+            
+            const myImg = document.getElementById("playerImg");
+            const myButton = document.getElementById("rockButton");
+        
+                      const myImg1 = document.getElementById("computerImg");
+                      const myButton1 = document.getElementById("rockButton");
+                      myImg.src = "imgs/1.png";
+                      myImg1.src = "imgs/hidden.png";
+        
+            
+                     
+        
+            console.log("Rock selected");
+            document.getElementById("rockButton").style.backgroundColor = "rgb(29, 240, 9)";
+            document.getElementById("paperButton").style.backgroundColor = "rgb(248, 158, 117)";
+            document.getElementById("scissorsButton").style.backgroundColor = "rgb(248, 158, 117)";
+           
+           playerChoice = 1;
+            console.log(playerChoice);
+        
+        
+                        });
+
+                        document.getElementById("paperButton").addEventListener("click", function(selectedPaper) {
+                            const myImg = document.getElementById("playerImg");
+    const myButton = document.getElementById("paperButton");
+
+    const myImg1 = document.getElementById("computerImg");
+              const myButton1 = document.getElementById("paperButton");
+
+              myImg1.src = "imgs/hidden.png";
+              myImg.src = "imgs/2.png";
+
+    console.log("Paper selected");
+    document.getElementById("rockButton").style.backgroundColor = "rgb(248, 158, 117)";
+    document.getElementById("paperButton").style.backgroundColor = "rgb(29, 240, 9)";
+    document.getElementById("scissorsButton").style.backgroundColor = "rgb(248, 158, 117)";
+  
+ playerChoice = 2;
+console.log(playerChoice);  });
+
+
+
+                        document.getElementById("scissorsButton").addEventListener("click", function(selectedScissors) {
+                        
+     const myImg = document.getElementById("playerImg");
+    const myButton = document.getElementById("scissorsButton");
+
+    const myImg1 = document.getElementById("computerImg");
+    const myButton1 = document.getElementById("scissorsButton");
+    myImg.src = "imgs/3.png";
+    myImg1.src = "imgs/hidden.png";
+
+    console.log("Scissors selected");
+    document.getElementById("scissorsButton").style.backgroundColor = "rgb(29, 240, 9)";
+    document.getElementById("rockButton").style.backgroundColor = "rgb(248, 158, 117)";
+    document.getElementById("paperButton").style.backgroundColor = "rgb(248, 158, 117)";
+  
+    playerChoice = 3;
+    console.log(playerChoice);
+                    
+                                    });
+
+        
+   document.getElementById("gameButton").addEventListener("click", function(selectedScissors) {
+   let computerChoice = Math.floor(Math.random() * 3) + 1;
+   if(playerChoice == 0){
+    alert("Please select a hand first!");
+
+   }else if(computerChoice == 1){
+    const myImg = document.getElementById("computerImg");
+    const myButton = document.getElementById("gameButton");
+   
+        myImg.src = "imgs/1.png";
+   
+     
+
+}else if(computerChoice == 2){
+    const myImg = document.getElementById("computerImg");
+    const myButton = document.getElementById("gameButton");
+   
+        myImg.src = "imgs/2.png";
+     
+     
+
+}else if(computerChoice == 3){
+    const myImg = document.getElementById("computerImg");
+    const myButton = document.getElementById("gameButton");
+   
+        myImg.src = "imgs/3.png";
+    
+    
+
+} checkWinner(computerChoice);  
+
+});
+               </script>
+  </body>
 </html>
