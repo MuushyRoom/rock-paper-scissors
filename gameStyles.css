@@ -30,7 +30,7 @@ body{
 }
 .gameDiv{
     display: flex;
-flex: 4;
+flex: 5;
 flex-direction: row;
 
 }
@@ -71,7 +71,7 @@ flex-direction: row;
 }
 .resultDiv{
     display: flex;
-    flex: 4;
+    flex: 3;
     flex-direction: column;
  
  
@@ -117,4 +117,10 @@ align-items: center;
     
     
   
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    cursor: pointer;
 }

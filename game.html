@@ -15,19 +15,15 @@
       <div class="gameDiv">
         <div class="buttonDiv">
             <h3>CHOOSE A HAND</h3>
-          <button
-            id="rockButton"
-            class="button1"
-           onclick="selectedRock()"
-          >
+          <button id="rockButton" class="button1"  onClick="setPlayerRock()">
             ROCK
           </button>
-    
+          
 
           <button
             id="paperButton"
             class="button2"
-            onclick="selectedPaper()"
+            onClick="setPlayerPaper()"
           >
             PAPER
           </button>
@@ -37,7 +33,7 @@
           <button
             id="scissorsButton"
             class="button3"
-            onclick="selectedScissors()"
+            onClick="setPlayerScissors()"
           >
             SCISSORS
           </button>
@@ -60,20 +56,17 @@
             </div>
           </div>
           <div class="mainButtonDiv">
-            <h2> Start <a href="game.html">new</a> game!</h2>
-            <button onclick="gameStart();checkWinner();" id="gameButton" class="buttonStart">
-              Start
-            </button>
+            <input type="button" value="Start" id="gameButton" class="buttonStart" onclick="gameStart();"></input>
+        
+            <script src="gameScripts.js"></script>
           
           </div>
         </div>
       </div>
     </div>
     <script>
-
-
-        document.getElementById("rockButton").addEventListener("click", function(selectedRock) {
-                        
+ 
+        document.getElementById("rockButton").addEventListener("click", function(selectedRock) {      
             
             const myImg = document.getElementById("playerImg");
             const myButton = document.getElementById("rockButton");
@@ -85,35 +78,37 @@
         
             
                      
-        
+           
             console.log("Rock selected");
             document.getElementById("rockButton").style.backgroundColor = "rgb(29, 240, 9)";
-            document.getElementById("paperButton").style.backgroundColor = "rgb(248, 158, 117)";
-            document.getElementById("scissorsButton").style.backgroundColor = "rgb(248, 158, 117)";
+    document.getElementById("paperButton").style.backgroundColor = "rgb(248, 158, 117)";
+    document.getElementById("scissorsButton").style.backgroundColor = "rgb(248, 158, 117)";
            
-           playerChoice = 1;
-            console.log(playerChoice);
+           
+         
         
         
                         });
 
-                        document.getElementById("paperButton").addEventListener("click", function(selectedPaper) {
-                            const myImg = document.getElementById("playerImg");
+
+                        
+    document.getElementById("paperButton").addEventListener("click", function(selectedPaper) {
+    const myImg = document.getElementById("playerImg");
     const myButton = document.getElementById("paperButton");
 
     const myImg1 = document.getElementById("computerImg");
-              const myButton1 = document.getElementById("paperButton");
+    const myButton1 = document.getElementById("paperButton");
 
-              myImg1.src = "imgs/hidden.png";
-              myImg.src = "imgs/2.png";
+    myImg1.src = "imgs/hidden.png";
+    myImg.src = "imgs/2.png";
 
     console.log("Paper selected");
     document.getElementById("rockButton").style.backgroundColor = "rgb(248, 158, 117)";
     document.getElementById("paperButton").style.backgroundColor = "rgb(29, 240, 9)";
     document.getElementById("scissorsButton").style.backgroundColor = "rgb(248, 158, 117)";
   
- playerChoice = 2;
-console.log(playerChoice);  });
+    playerChoice = 2;
+     });
 
 
 
@@ -133,43 +128,10 @@ console.log(playerChoice);  });
     document.getElementById("paperButton").style.backgroundColor = "rgb(248, 158, 117)";
   
     playerChoice = 3;
-    console.log(playerChoice);
+    
                     
                                     });
-
-        
-   document.getElementById("gameButton").addEventListener("click", function(selectedScissors) {
-   let computerChoice = Math.floor(Math.random() * 3) + 1;
-   if(playerChoice == 0){
-    alert("Please select a hand first!");
-
-   }else if(computerChoice == 1){
-    const myImg = document.getElementById("computerImg");
-    const myButton = document.getElementById("gameButton");
-   
-        myImg.src = "imgs/1.png";
-   
-     
-
-}else if(computerChoice == 2){
-    const myImg = document.getElementById("computerImg");
-    const myButton = document.getElementById("gameButton");
-   
-        myImg.src = "imgs/2.png";
-     
-     
-
-}else if(computerChoice == 3){
-    const myImg = document.getElementById("computerImg");
-    const myButton = document.getElementById("gameButton");
-   
-        myImg.src = "imgs/3.png";
-    
-    
-
-} checkWinner(computerChoice);  
-
-});
+                
                </script>
   </body>
 </html>
