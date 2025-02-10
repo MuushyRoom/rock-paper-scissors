@@ -10,7 +10,7 @@
   <body>
     <div class="mainDiv">
       <div class="headerDiv">
-        <h1 id="textHeader">Rock Paper Scissors</h1>
+        <h1 id="textHeader"><span id="text1">Rock </span>  <span id="text2"> Paper </span>  <span id="text3">Scissors</span> </h1>
       </div>
       <div class="gameDiv">
         <div class="buttonDiv">
@@ -40,6 +40,7 @@
          
         </div>
         <div class="resultDiv">
+         
           <div class="handDiv">
             <div id="playerHand">
               <div id="playerHandContainer">
@@ -47,7 +48,8 @@
               </div>
               <h2>Your Hand</h2>
             </div>
-
+            <div class="resultBox"> <h2  class="resultText" id="resultText">VS</h2> </div>
+           
             <div id="computerHand">
               <div id="computerHandContainer">
                 <img id="computerImg" src="imgs/hidden.png" alt="" />
@@ -56,7 +58,7 @@
             </div>
           </div>
           <div class="mainButtonDiv">
-            <input type="button" value="Start" id="gameButton" class="buttonStart" onclick="gameStart();"></input>
+            <input type="button" value="Play" id="gameButton" class="buttonStart" onclick=""></input>
         
             <script src="gameScripts.js"></script>
           
@@ -70,18 +72,25 @@
  
         document.getElementById("rockButton").addEventListener("click", function(selectedRock) {      
           setPlayerRock();
+          let resultText = document.getElementById("resultText");
+          resultText.textContent = "VS"; 
             const myImg = document.getElementById("playerImg");
             const myButton = document.getElementById("rockButton");
-        
+            let text1 = document.getElementById("text1");
+            let text2 = document.getElementById("text2");
+            let text3 = document.getElementById("text3");
                       const myImg1 = document.getElementById("computerImg");
                       const myButton1 = document.getElementById("rockButton");
                       myImg.src = "imgs/1.png";
                       myImg1.src = "imgs/hidden.png";
         
             
-                     
-           
-            console.log("Rock selected");
+            //text colors above         
+              document.getElementById("text1").style.color = "rgb(29, 240, 9)";
+              document.getElementById("text2").style.color = "black";
+              document.getElementById("text3").style.color = "black";
+
+              //button colors
             document.getElementById("rockButton").style.backgroundColor = "rgb(29, 240, 9)";
     document.getElementById("paperButton").style.backgroundColor = "rgb(248, 158, 117)";
     document.getElementById("scissorsButton").style.backgroundColor = "rgb(248, 158, 117)";
@@ -95,7 +104,12 @@
 
                                    
     document.getElementById("paperButton").addEventListener("click", function(selectedPaper) {
-      setPlayerPaper();  
+      setPlayerPaper(); 
+      let resultText = document.getElementById("resultText");
+      resultText.textContent = "VS"; 
+      let text1 = document.getElementById("text1");
+            let text2 = document.getElementById("text2");
+            let text3 = document.getElementById("text3"); 
     const myImg = document.getElementById("playerImg");
     const myButton = document.getElementById("paperButton");
 
@@ -104,6 +118,13 @@
 
     myImg1.src = "imgs/hidden.png";
     myImg.src = "imgs/2.png";
+
+     //text colors above         
+     document.getElementById("text1").style.color = "black";
+              document.getElementById("text2").style.color = "rgb(29, 240, 9)";
+              document.getElementById("text3").style.color = "black";
+
+              //button colors
 
     console.log("Paper selected");
     document.getElementById("rockButton").style.backgroundColor = "rgb(248, 158, 117)";
@@ -117,14 +138,24 @@
 
                         document.getElementById("scissorsButton").addEventListener("click", function(selectedScissors) {
                           setPlayerScissors();  
+                          let resultText = document.getElementById("resultText");
+                          resultText.textContent = "VS"; 
      const myImg = document.getElementById("playerImg");
     const myButton = document.getElementById("scissorsButton");
+
+    let text1 = document.getElementById("text1");
+            let text2 = document.getElementById("text2");
+            let text3 = document.getElementById("text3");
 
     const myImg1 = document.getElementById("computerImg");
     const myButton1 = document.getElementById("scissorsButton");
     myImg.src = "imgs/3.png";
     myImg1.src = "imgs/hidden.png";
 
+     //text colors above         
+     document.getElementById("text1").style.color = "black";
+              document.getElementById("text2").style.color = "black";
+              document.getElementById("text3").style.color = "rgb(29, 240, 9)";
     console.log("Scissors selected");
     document.getElementById("scissorsButton").style.backgroundColor = "rgb(29, 240, 9)";
     document.getElementById("rockButton").style.backgroundColor = "rgb(248, 158, 117)";

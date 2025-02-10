@@ -22,17 +22,16 @@ function setPlayerScissors() {
 }
 
 
-function gameStart(){
-    
 
+   
     document.getElementById("gameButton").addEventListener("click", function(gameStart) {
+
+let resultText = document.getElementById("resultText");
         let computerChoice = Math.floor(Math.random() * 3) + 1;
-        let btn = document.getElementById("gameButton");
-        if (btn.value=="Start"){
-            let resultText = document.getElementById("textHeader");
            
+            console.log("222222222");
             if(playerHand == 0){
-             alert("Please select a hand first!");
+                resultText.textContent = "SELECT A HAND!"; 
          
             }else if(computerChoice == 1){
              const myImg = document.getElementById("computerImg");
@@ -52,51 +51,29 @@ function gameStart(){
          }
          
          if(playerHand == computerChoice){
-            resultText.textContent = "It's a tie!"; 
+            resultText.textContent = "TIE!"; 
             
             } else if(playerHand == 1 && computerChoice == 2){
                
-                resultText.textContent = "You Lose!"; 
+                resultText.textContent = "YOU LOSE!"; 
             }else if(playerHand == 1 && computerChoice == 3){
               
-                resultText.textContent = "You Win!"; 
+                resultText.textContent = "YOU WIN!"; 
             } else if(playerHand == 2 && computerChoice == 1){
               
-                resultText.textContent = "You Win!"; 
+                resultText.textContent = "YOU WIN!"; 
             }else if(playerHand == 2 && computerChoice == 3){
               
-                resultText.textContent = "You Win!"; 
+                resultText.textContent = "YOU LOSE!"; 
             } else if(playerHand == 3 && computerChoice == 1){
              
-                resultText.textContent = "You Lose!"; 
+                resultText.textContent = "YOU LOSE!";
             }else if(playerHand == 3 && computerChoice == 2){
                 
                 resultText.textContent = "You Win!"; 
             }
             
           
-            document.getElementById("rockButton").style.backgroundColor = "rgb(248, 158, 117)";
-            document.getElementById("paperButton").style.backgroundColor = "rgb(248, 158, 117)";
-            document.getElementById("scissorsButton").style.backgroundColor = "rgb(248, 158, 117)";
-            btn.innerHTML = "New Game";
-            btn.value = "New Game";
-            playerHand = 0;
-            
-
-            
-        }else if (btn.value == "New Game"){
-          
-                      
-            window.location = "game.html"; 
-        }
      });
+ 
 
-
-    
-
-
-
-
-
-    
-}

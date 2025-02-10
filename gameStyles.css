@@ -155,3 +155,16 @@ a {
     background-color: transparent;
     text-decoration: none;
   }
+  .resultText{
+ text-align: center;   
+ font-size: 60px;
+ 
+
+  }
+  #text1,#text2,#text3{
+    font-size: 70px;
+  }
+ 
+  .resultBox {
+    width: 20%;
+  }
